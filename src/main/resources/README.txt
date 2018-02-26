@@ -1,0 +1,1 @@
+curl -i -H "key: WCZZYjnOQFUYfJIN2ShH1iD24UHo58A6TI" -H "Content-Type: application/json" http://localhost:8080/api/users
