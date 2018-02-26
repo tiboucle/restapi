@@ -3,6 +3,7 @@ package com.test.restapi.controller;
 import com.test.restapi.model.User;
 import com.test.restapi.service.UserService;
 import java.util.Collection;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,12 +29,13 @@ public class UserController {
   }
 
   @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-  public User insert(@RequestBody User aUser) {
+  public User insert(@Valid @RequestBody User aUser) {
+    System.out.println(aUser);
     return fUserService.insert(aUser);
   }
 
   @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-  public User update(@RequestBody User aUser) {
+  public User update(@Valid @RequestBody User aUser) {
     return fUserService.update(aUser);
   }
 

@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @EntityScan
 public class User extends Entity {
-  @Size(min = 2, max = 20)
+  @Size(min = 2, max = 20, message="First Name should between 2 to 20")
   private String fFirstName;
-  @Size(min = 2, max = 20)
+  @Size(min = 2, max = 20, message="Last Name should between 2 to 20")
   private String fLastName;
   private Date fDateOfBirth;
   @Size(min = 5, max = 40)
