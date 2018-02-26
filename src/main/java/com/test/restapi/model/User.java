@@ -1,22 +1,32 @@
 package com.test.restapi.model;
 
 import java.util.Date;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.Email;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @EntityScan
 public class User extends Entity {
-  @Size(min = 2, max = 20, message="First Name should between 2 to 20")
+  @Pattern(regexp = "[^A-Za-z]$", message = "First Name should alphabet")
+  @Size(min = 2, max = 20, message = "First Name should between 2 to 20")
   private String fFirstName;
-  @Size(min = 2, max = 20, message="Last Name should between 2 to 20")
+  @Pattern(regexp = "[^A-Za-z]$", message = "First Name should alphabet")
+  @Size(min = 2, max = 20, message = "Last Name should between 2 to 20")
   private String fLastName;
   private Date fDateOfBirth;
-  @Size(min = 5, max = 40)
+  @Pattern(regexp = "[^A-Za-z]$", message = "First Name should alphabet")
+  @Size(min = 5, max = 40, message = "Last Name should between 2 to 40")
   private String fStreetAddress;
-  @Size(min = 2, max = 40)
+  @Pattern(regexp = "[^A-Za-z]$", message = "First Name should alphabet")
+  @Size(min = 2, max = 40, message = "Last Name should between 2 to 40")
   private String fCity;
   private String fProvince;
+  @Pattern(regexp = "^$|[0-9]", message = "Telephone should number")
+  @Size(min = 10, max = 12, message = "Last Name should between 2 to 20")
   private String fTelephone;
+  @Email(message = "Email Address wrong")
   private String fEmail;
 
   public String getFirstName() {
