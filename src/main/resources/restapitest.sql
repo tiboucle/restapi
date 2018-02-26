@@ -63,7 +63,7 @@ INSERT INTO `user` (`id`, `first_name`, `last_name`, `date_of_birth`, `street_ad
 (1, 'Ajat', 'Sudrajat', '1989-02-04', 'Jl. Panyileukan No.16', 'Bandung', 'Jawa Barat', '082118208420', 'ajat.sudrajat76@gmail.om', '2018-02-24 13:04:59', NULL),
 (2, 'Dila', 'silvana', '1970-01-08', 'Jl. Panyileukan No.16', 'Bandung', 'Jawa Barat', '082118208420', 'dila.silvana@gmail.om', '2018-02-24 14:47:59', '2018-02-24 14:47:58'),
 (3, 'Bryan', 'Sudrajat', '1970-01-08', 'Jl. Panyileukan No.16', 'Bandung', 'Jawa Barat', '082118208420', 'bryan@gmail.om', '2018-02-24 14:42:15', NULL),
-(5, 'arya', 'Sudrajat', '1989-02-04', 'Jl. Panyileukan No.16', 'Bandung', 'Jawa Barat', '082118208420', 'raisa@gmail.om', '2018-02-24 14:45:48', NULL);
+(4, 'arya', 'Sudrajat', '1989-02-04', 'Jl. Panyileukan No.16', 'Bandung', 'Jawa Barat', '082118208420', 'raisa@gmail.om', '2018-02-24 14:45:48', NULL);
 
 --
 -- Indexes for dumped tables
@@ -84,9 +84,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE USER 'restapiuser'@'localhost' IDENTIFIED BY 'restapiuser';
+GRANT ALL PRIVILEGES ON * . * TO 'restapiuser'@'localhost';
+FLUSH PRIVILEGES;
