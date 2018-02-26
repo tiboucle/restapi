@@ -1,48 +1,53 @@
 package com.test.restapi.model;
 
 import java.util.Date;
+import javax.validation.constraints.Size;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @EntityScan
 public class User extends Entity {
+  @Size(min = 2, max = 20)
   private String fFirstName;
+  @Size(min = 2, max = 20)
   private String fLastName;
   private Date fDateOfBirth;
+  @Size(min = 5, max = 40)
   private String fStreetAddress;
+  @Size(min = 2, max = 40)
   private String fCity;
   private String fProvince;
   private String fTelephone;
   private String fEmail;
 
-  protected String getFirstName() {
+  public String getFirstName() {
     return fFirstName;
   }
 
-  protected String getLastName() {
+  public String getLastName() {
     return fLastName;
   }
 
-  protected Date getDateOfBirth() {
+  public Date getDateOfBirth() {
     return fDateOfBirth;
   }
 
-  protected String getStreetAddress() {
+  public String getStreetAddress() {
     return fStreetAddress;
   }
 
-  protected String getCity() {
+  public String getCity() {
     return fCity;
   }
 
-  protected String getProvince() {
+  public String getProvince() {
     return fProvince;
   }
 
-  protected String getTelephone() {
+  public String getTelephone() {
     return fTelephone;
   }
 
-  protected String getEmail() {
+  public String getEmail() {
     return fEmail;
   }
 
@@ -80,7 +85,9 @@ public class User extends Entity {
     fTelephone = aTelephone;
     return this;
   }
-  void setEmail(String aEmail) {
+
+  protected User setEmail(String aEmail) {
     fEmail = aEmail;
+    return this;
   }
 }

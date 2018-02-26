@@ -38,7 +38,7 @@ public class UserController {
   }
 
   @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-  public User delete(@PathVariable int aId) {
+  public User delete(@PathVariable("id") int aId) {
     User user = fUserService.findById(aId);
     return fUserService.delete(user);
   }

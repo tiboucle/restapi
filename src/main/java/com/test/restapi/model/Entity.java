@@ -6,12 +6,12 @@
 
 package com.test.restapi.model;
 
-import java.time.Instant;
+import java.util.Date;
 
 public abstract class Entity {
   private int fId;
-  private Instant fCreatedAt;
-  private Instant fModifiedAt;
+  private Date fCreatedAt;
+  private Date fModifiedAt;
 
   public Entity() {
   }
@@ -20,25 +20,25 @@ public abstract class Entity {
     return fId;
   }
 
+  public Date getCreatedAt() {
+    return fCreatedAt;
+  }
+
+  public Date getModifiedAt() {
+    return fModifiedAt;
+  }
+
   protected Entity setId(int aId) {
     fId = aId;
     return this;
   }
 
-  protected Instant getCreatedAt() {
-    return fCreatedAt;
-  }
-
-  protected Instant getModifiedAt() {
-    return fModifiedAt;
-  }
-
-  protected Entity setModifiedAt(Instant aModifiedAt) {
+  protected Entity setModifiedAt(Date aModifiedAt) {
     fModifiedAt = aModifiedAt;
     return this;
   }
 
-  protected Entity setCreatedAt(Instant aCreatedAt) {
+  protected Entity setCreatedAt(Date aCreatedAt) {
     fCreatedAt = aCreatedAt;
     return this;
   }

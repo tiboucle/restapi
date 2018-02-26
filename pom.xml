@@ -1,210 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.test</groupId>
-	<artifactId>restapi</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+  <groupId>com.test</groupId>
+  <artifactId>restapi</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
-	<name>restapi</name>
-	<description>Demo project for Spring Boot</description>
+  <name>restapi</name>
+  <description>Demo project for Spring Boot</description>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.10.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.10.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
 
-		<!-- Database -->
-		<db.driver>com.mysql.jdbc.Driver</db.driver>
-		<db.url>jdbc:mysql://localhost:3306/restapitest?createDatabaseIfNotExist=true</db.url>
-		<db.username>restapiuser</db.username>
-		<db.password>restapiuser</db.password>
-		<db.jooq.dialect>org.jooq.util.mysql.MySQLDSL</db.jooq.dialect>
+    <!-- Database -->
+    <db.driver>com.mysql.jdbc.Driver</db.driver>
+    <db.url>jdbc:mysql://localhost:3306/restapitest?createDatabaseIfNotExist=true</db.url>
+    <db.username>restapiuser</db.username>
+    <db.password>restapiuser</db.password>
+    <db.jooq.dialect>org.jooq.util.mysql.MySQLDSL</db.jooq.dialect>
 
-		<!-- JOOQ -->
-		<jooq.version>3.9.5</jooq.version>
-		<mvn.jooq.codegen.version>3.9.5</mvn.jooq.codegen.version>
-		<generated.source>src/generated/java/jooq</generated.source>
-	</properties>
+    <!-- JOOQ -->
+    <jooq.version>3.9.5</jooq.version>
+    <mvn.jooq.codegen.version>3.9.5</mvn.jooq.codegen.version>
+    <generated.source>src/generated/java/jooq</generated.source>
+  </properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jooq</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jooq</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-	</dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-devtools</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security.oauth</groupId>
+      <artifactId>spring-security-oauth2</artifactId>
+    </dependency>
+  </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
 
-			<!-- add gensrc/main/java directory as source folder -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>${generated.source}</source>
-							</sources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+      <!-- add gensrc/main/java directory as source folder -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${generated.source}</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
 
-		</plugins>
-	</build>
+    </plugins>
+  </build>
 
-	<profiles>
-		<profile>
-			<id>mysql</id>
-			<build>
-				<plugins>
-					<!-- JOOQ -->
-					<plugin>
-						<groupId>org.jooq</groupId>
-						<artifactId>jooq-codegen-maven</artifactId>
-						<version>${mvn.jooq.codegen.version}</version>
+  <profiles>
+    <profile>
+      <id>mysql</id>
+      <build>
+        <plugins>
+          <!-- JOOQ -->
+          <plugin>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-codegen-maven</artifactId>
+            <version>${mvn.jooq.codegen.version}</version>
 
-						<configuration>
-							<!-- The JDBC connection configuration. -->
-							<jdbc>
-								<driver>${db.driver}</driver>
-								<url>${db.url}</url>
-								<user>${db.username}</user>
-								<password>${db.password}</password>
-							</jdbc>
+            <configuration>
+              <!-- The JDBC connection configuration. -->
+              <jdbc>
+                <driver>${db.driver}</driver>
+                <url>${db.url}</url>
+                <user>${db.username}</user>
+                <password>${db.password}</password>
+              </jdbc>
 
-							<!-- The GENERATOR configuration. -->
-							<generator>
-								<strategy>
-									<matchers>
-										<tables>
-											<table>
-												<expression>^(.*)$</expression>
-												<tableClass>
-													<transform>PASCAL</transform>
-													<expression>$1_Table</expression>
-												</tableClass>
-												<tableIdentifier>
-													<transform>UPPER</transform>
-													<expression>T_$1</expression>
-												</tableIdentifier>
-												<recordClass>
-													<transform>PASCAL</transform>
-													<expression>$1_Record</expression>
-												</recordClass>
-											</table>
-										</tables>
-										<sequences>
-											<sequence>
-												<expression>^(.*)$</expression>
-												<sequenceIdentifier>
-													<transform>UPPER</transform>
-													<expression>S_$1</expression>
-												</sequenceIdentifier>
-											</sequence>
-										</sequences>
-									</matchers>
-								</strategy>
+              <!-- The GENERATOR configuration. -->
+              <generator>
+                <strategy>
+                  <matchers>
+                    <tables>
+                      <table>
+                        <expression>^(.*)$</expression>
+                        <tableClass>
+                          <transform>PASCAL</transform>
+                          <expression>$1_Table</expression>
+                        </tableClass>
+                        <tableIdentifier>
+                          <transform>UPPER</transform>
+                          <expression>T_$1</expression>
+                        </tableIdentifier>
+                        <recordClass>
+                          <transform>PASCAL</transform>
+                          <expression>$1_Record</expression>
+                        </recordClass>
+                      </table>
+                    </tables>
+                    <sequences>
+                      <sequence>
+                        <expression>^(.*)$</expression>
+                        <sequenceIdentifier>
+                          <transform>UPPER</transform>
+                          <expression>S_$1</expression>
+                        </sequenceIdentifier>
+                      </sequence>
+                    </sequences>
+                  </matchers>
+                </strategy>
 
-								<!-- The jooq-meta configuration, configuring the information schema source. -->
-								<database>
-									<includes>.*</includes>
-									<inputSchema>restapitest</inputSchema>
-									<includeTables>true</includeTables>
-									<includeRoutines>false</includeRoutines>
-									<includePackages>false</includePackages>
-									<includeUDTs>false</includeUDTs>
-									<includeSequences>true</includeSequences>
-									<includePrimaryKeys>false</includePrimaryKeys>
-									<includeUniqueKeys>false</includeUniqueKeys>
-									<includeForeignKeys>false</includeForeignKeys>
-								</database>
+                <!-- The jooq-meta configuration, configuring the information schema source. -->
+                <database>
+                  <includes>.*</includes>
+                  <inputSchema>restapitest</inputSchema>
+                  <includeTables>true</includeTables>
+                  <includeRoutines>true</includeRoutines>
+                  <includePackages>false</includePackages>
+                  <includeUDTs>false</includeUDTs>
+                  <includeSequences>true</includeSequences>
+                  <includePrimaryKeys>false</includePrimaryKeys>
+                  <includeUniqueKeys>false</includeUniqueKeys>
+                  <includeForeignKeys>false</includeForeignKeys>
+                </database>
 
-								<!-- The jooq-codegen configuration, configuring the generated output content. -->
-								<generate>
-									<deprecated>false</deprecated>
-									<records>false</records>
-									<fluentSetters>true</fluentSetters>
-								</generate>
+                <!-- The jooq-codegen configuration, configuring the generated output content. -->
+                <generate>
+                  <deprecated>false</deprecated>
+                  <records>false</records>
+                  <fluentSetters>true</fluentSetters>
+                </generate>
 
-								<!-- The generator output target -->
-								<target>
-									<packageName>com.test.restapi</packageName>
-									<directory>${basedir}/src/generated/java/jooq</directory>
-								</target>
-							</generator>
-						</configuration>
+                <!-- The generator output target -->
+                <target>
+                  <packageName>com.test.restapi</packageName>
+                  <directory>${basedir}/src/generated/java/jooq</directory>
+                </target>
+              </generator>
+            </configuration>
 
-						<!-- The jOOQ code generation plugin is also executed in the generate-sources phase, prior
+            <!-- The jOOQ code generation plugin is also executed in the generate-sources phase, prior
                  to compilation -->
-						<executions>
-							<execution>
-								<phase>generate-sources</phase>
-								<goals>
-									<goal>generate</goal>
-								</goals>
-							</execution>
-						</executions>
+            <executions>
+              <execution>
+                <phase>generate-sources</phase>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+              </execution>
+            </executions>
 
-						<dependencies>
-							<dependency>
-								<groupId>mysql</groupId>
-								<artifactId>mysql-connector-java</artifactId>
-								<version>${mysql.version}</version>
-							</dependency>
-						</dependencies>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+            <dependencies>
+              <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+              </dependency>
+            </dependencies>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 
 </project>
