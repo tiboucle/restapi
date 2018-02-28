@@ -30,7 +30,6 @@ public class UserController {
 
   @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
   public User insert(@Valid @RequestBody User aUser) {
-    System.out.println(aUser);
     return fUserService.insert(aUser);
   }
 

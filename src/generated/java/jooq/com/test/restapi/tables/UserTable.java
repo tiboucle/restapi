@@ -37,7 +37,7 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class UserTable extends TableImpl<Record> {
 
-    private static final long serialVersionUID = 1918075719;
+    private static final long serialVersionUID = 1404927864;
 
     /**
      * The reference instance of <code>restapitest.user</code>
@@ -105,7 +105,7 @@ public class UserTable extends TableImpl<Record> {
     /**
      * The column <code>restapitest.user.modified_at</code>.
      */
-    public final TableField<Record, Timestamp> MODIFIED_AT = createField("modified_at", org.jooq.impl.SQLDataType.TIMESTAMP.nullable(false).defaultValue(org.jooq.impl.DSL.inline("0000-00-00 00:00:00", org.jooq.impl.SQLDataType.TIMESTAMP)), this, "");
+    public final TableField<Record, Timestamp> MODIFIED_AT = createField("modified_at", org.jooq.impl.SQLDataType.TIMESTAMP, this, "");
 
     /**
      * Create a <code>restapitest.user</code> table reference

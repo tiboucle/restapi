@@ -1,6 +1,7 @@
 package com.test.restapi.model;
 
 import com.test.restapi.Tables;
+import com.test.restapi.routines.InsertUser;
 import com.test.restapi.tables.UserTable;
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -35,8 +36,18 @@ public class UserRepository extends AbstractRepository<Integer, User> {
   }
 
   public User insert(User aUser) {
-    Record record = createRecord(aUser, false);
-    fDSLContext.insertInto(USER).set(record).execute();
+    // Record record = createRecord(aUser, false);
+    // fDSLContext.insertInto(USER).set(record).execute();
+    InsertUser insertUser = new InsertUser();
+    insertUser.setFirstName(aUser.getFirstName());
+    insertUser.setLastName(aUser.getLastName());
+    insertUser.setDateOfBirth(new Date(aUser.getDateOfBirth().getTime()));
+    insertUser.setStreetAddress(aUser.getStreetAddress());
+    insertUser.setCity(aUser.getCity());
+    insertUser.setProvince(aUser.getProvince());
+    insertUser.setTelephone(aUser.getTelephone());
+    insertUser.setEmail(aUser.getEmail());
+    insertUser.execute(fDSLContext.configuration());
     return aUser;
   }
 

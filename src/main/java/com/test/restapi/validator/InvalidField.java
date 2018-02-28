@@ -1,4 +1,4 @@
-package com.test.restapi.controller.validation;
+package com.test.restapi.validator;
 
 public class InvalidField {
   private String fMessage;

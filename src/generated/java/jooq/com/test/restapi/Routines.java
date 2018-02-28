@@ -4,7 +4,10 @@
 package com.test.restapi;
 
 
+import com.test.restapi.routines.InsertUser;
 import com.test.restapi.routines.SelectAll;
+
+import java.sql.Date;
 
 import javax.annotation.Generated;
 
@@ -23,6 +26,23 @@ import org.jooq.Configuration;
 )
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Routines {
+
+    /**
+     * Call <code>restapitest.insert_user</code>
+     */
+    public static void insertUser(Configuration configuration, String firstName, String lastName, Date dateOfBirth, String streetAddress, String city, String province, String telephone, String email) {
+        InsertUser p = new InsertUser();
+        p.setFirstName(firstName);
+        p.setLastName(lastName);
+        p.setDateOfBirth(dateOfBirth);
+        p.setStreetAddress(streetAddress);
+        p.setCity(city);
+        p.setProvince(province);
+        p.setTelephone(telephone);
+        p.setEmail(email);
+
+        p.execute(configuration);
+    }
 
     /**
      * Call <code>restapitest.select_all</code>
